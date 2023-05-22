@@ -115,9 +115,7 @@ export default function AccountPage() {
                       <div>
                         {orders.length === 0 && <p>Login to see your orders</p>}
                         {orders.length > 0 &&
-                          orders.map((o, idx) => (
-                            <SingleOrder key={idx} {...o} />
-                          ))}
+                          orders.map((o) => <SingleOrder key={o._id} {...o} />)}
                       </div>
                     )}
                   </>
