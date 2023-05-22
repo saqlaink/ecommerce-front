@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledDiv = styled.div`
-  max-width: 810px;
+  max-width: 820px;
   margin: 0 auto;
   padding: 0 20px;
 `;

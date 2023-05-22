@@ -61,7 +61,7 @@ const Price = styled.div`
   font-weight: 500;
   text-align: right;
   @media screen and (min-width: 768px) {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     text-align: left;
   }
@@ -124,7 +124,7 @@ export default function ProductBox({
       <ProductInfoBox>
         <Title href={url}>{title}</Title>
         <PriceRow>
-          <Price>₹{price}</Price>
+          <Price>₹{price.toLocaleString('en-IN')}</Price>
           <FlyingButton _id={_id} src={images?.[0]}>
             Add to cart
           </FlyingButton>

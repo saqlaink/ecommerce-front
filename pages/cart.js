@@ -13,6 +13,7 @@ import Header from '@/components/Header';
 import Button from '@/components/Button';
 import Input from '@/components/Input';
 import Table from '@/components/Table';
+import Spinner from '@/components/Spinner';
 
 const ColumnsWrapper = styled.div`
   display: grid;
@@ -97,11 +98,14 @@ export default function CartPage() {
   const [country, setCountry] = useState('');
   const [isSuccess, setIsSuccess] = useState(false);
   const [shippingFee, setShippingFee] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (cartProducts.length > 0) {
+      setLoading(true);
       axios.post('/api/cart', { ids: cartProducts }).then((response) => {
         setProducts(response.data);
+        setLoading(false);
       });
     } else {
       setProducts([]);
@@ -189,8 +193,9 @@ export default function CartPage() {
           <RevealWrapper delay={0}>
             <Box>
               <h2>Cart</h2>
+              {loading && <Spinner fullWidth={true} />}
               {!cartProducts?.length && <div>Your Cart is Empty!</div>}
-              {products?.length > 0 && (
+              {!loading && products?.length > 0 && (
                 <Table>
                   <thead>
                     <tr>
