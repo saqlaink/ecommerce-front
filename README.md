@@ -1,5 +1,5 @@
 ## Ecommerce Front End
-This is paired with Ecommerce Admin app for managing orders and products. https://github.com/saqlaink/Ecommerce-admin
+This is paired with Ecommerce Admin app for managing orders and products.  https://github.com/saqlaink/Ecommerce-admin
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
